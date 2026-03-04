@@ -33,7 +33,7 @@ class _RelojState extends State<Reloj> {
   @override
   Widget build(BuildContext context) {
     return Text(
-      overflow: .ellipsis,
+      overflow: TextOverflow.ellipsis,
       "${hora.hour.toString().padLeft(2, '0')}:${hora.minute.toString().padLeft(2, '0')}:${hora.second.toString().padLeft(2, '0')}",
     );
   }

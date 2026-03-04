@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:
@@ -22,7 +23,7 @@ flutter:
     - assets/images/messenger.png
 
 fonts:
-  - family: GoogleSans
+  - family: Google Sans Medium
     fonts:
       - asset: assets/fonts/GoogleSans-Medium.ttf
         style: normal

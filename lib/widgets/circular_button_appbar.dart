@@ -16,41 +16,39 @@ class CircularButtonAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Stack(
-        children: [
-          Container(
-            alignment: .center,
-            padding: EdgeInsets.all(7),
-            decoration: BoxDecoration(
-              color: colorFondo,
-              shape: BoxShape.circle,
-              // boxShadow: [
-              //   BoxShadow(
-              //     spreadRadius: 1,
-              //     blurRadius: 2,
-              //     color: const Color(0xaaaaaaaa),
-              //     offset: Offset(0, 2),
-              //   ),
-              // ],
-            ),
-            child: Icon(icono, size: 22, color: colorIcono),
+    return Stack(
+      children: [
+        Container(
+          alignment: Alignment.center,
+          padding: EdgeInsets.all(7),
+          decoration: BoxDecoration(
+            color: colorFondo,
+            shape: BoxShape.circle,
+            // boxShadow: [
+            //   BoxShadow(
+            //     spreadRadius: 1,
+            //     blurRadius: 2,
+            //     color: const Color(0xaaaaaaaa),
+            //     offset: Offset(0, 2),
+            //   ),
+            // ],
           ),
-          if (badge)
-            Positioned(
-              child: Container(
-                width: 10,
-                height: 10,
-                margin: EdgeInsets.only(left: 20, top: 10),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white, width: 1),
-                  borderRadius: .circular(5),
-                  color: Colors.red,
-                ),
+          child: Icon(icono, size: 22, color: colorIcono),
+        ),
+        if (badge)
+          Positioned(
+            child: Container(
+              width: 10,
+              height: 10,
+              margin: EdgeInsets.only(left: 20, top: 7),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white, width: 1),
+                borderRadius: BorderRadius.circular(5),
+                color: Colors.red,
               ),
             ),
-        ],
-      ),
+          ),
+      ],
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:facebook_ui/widgets/acciones.dart';
 import 'package:facebook_ui/widgets/avatar.dart';
 import 'package:facebook_ui/widgets/circular_button_appbar.dart';
 import 'package:flutter/material.dart';
@@ -11,14 +12,22 @@ class PagePrincipal extends StatelessWidget {
       appBar: AppBar(
         toolbarTextStyle: TextStyle(
           fontFamily: "GoogleSans",
-          fontWeight: .w700,
-          fontSize: 24,
+          fontWeight: FontWeight.w700,
+          fontSize: 26,
           color: Colors.blueAccent,
         ),
-        leading: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-          child: Text("facebook", overflow: .ellipsis, textAlign: .start),
+        title: Text(
+          "facebook",
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.blueAccent,
+            fontFamily: "Google Sans Medium",
+            fontWeight: FontWeight.w500,
+            fontSize: 22,
+          ),
         ),
+        //leading: Text("facebook", overflow: .ellipsis, textAlign: .center),
         leadingWidth: 160,
         actions: [
           CircularButtonAppbar(
@@ -46,13 +55,18 @@ class PagePrincipal extends StatelessWidget {
             colorIcono: Colors.white,
             badge: false,
           ),
-          SizedBox(width: 8),
+          SizedBox(width: 20),
         ],
-        automaticallyImplyActions: false,
+        automaticallyImplyLeading: false,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8).copyWith(bottom: 25),
-        child: Column(children: [Avatar(texto: "¿Qué estás pensando? ...")]),
+      body: SafeArea(
+        maintainBottomViewPadding: true,
+        child: Column(
+          children: [
+            Avatar(texto: "¿Qué estás pensando? ..."),
+            Acciones(),
+          ],
+        ),
       ),
     );
   }
