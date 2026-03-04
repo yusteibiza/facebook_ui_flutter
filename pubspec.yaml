@@ -24,3 +24,6 @@ fonts:
       - asset: assets/fonts/GoogleSans-Medium.ttf
         style: normal
         weight: 500
+
+assets:
+  - ../assets/images/yo.jpg
