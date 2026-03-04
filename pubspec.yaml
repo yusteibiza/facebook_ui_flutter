@@ -17,6 +17,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/yo.jpg
+    - assets/images/messenger.png
 
 fonts:
   - family: GoogleSans
@@ -25,5 +28,3 @@ fonts:
         style: normal
         weight: 500
 
-assets:
-  - ../assets/images/yo.jpg
