@@ -1,6 +1,7 @@
 import 'package:facebook_ui/widgets/acciones.dart';
 import 'package:facebook_ui/widgets/avatar.dart';
 import 'package:facebook_ui/widgets/circular_button_appbar.dart';
+import 'package:facebook_ui/widgets/reels.dart';
 import 'package:flutter/material.dart';
 
 class PagePrincipal extends StatelessWidget {
@@ -9,7 +10,12 @@ class PagePrincipal extends StatelessWidget {
   @override
   Widget build(context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
+        elevation: 4,
+        // para que la desplazar el listview no coja el color de fondo del listview y quede en blanco
+        surfaceTintColor: Colors.transparent,
+        backgroundColor: Colors.white,
         toolbarTextStyle: TextStyle(
           fontFamily: "GoogleSans",
           fontWeight: FontWeight.w700,
@@ -61,11 +67,24 @@ class PagePrincipal extends StatelessWidget {
       ),
       body: SafeArea(
         maintainBottomViewPadding: true,
-        child: Column(
-          children: [
-            Avatar(texto: "¿Qué estás pensando? ..."),
-            Acciones(),
-          ],
+        child: Container(
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Avatar(texto: "¿Qué estás pensando? ..."),
+                Expanded(
+                  child: Container(
+                    child: ListView(
+                      padding: EdgeInsets.all(5),
+                      children: [Acciones(), Reels()],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

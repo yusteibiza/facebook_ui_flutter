@@ -8,13 +8,14 @@ class Avatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 14),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: Row(
+    return Container(
+      decoration: BoxDecoration(color: Colors.white),
+      height: 64,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 14, top: 9),
+        child: Column(
+          children: [
+            Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const ClipRRect(
@@ -30,6 +31,7 @@ class Avatar extends StatelessWidget {
                     ? Text(
                         "$usuario$texto",
                         overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                         style: const TextStyle(
                           fontSize: 16,
                           color: Colors.grey,
@@ -38,6 +40,7 @@ class Avatar extends StatelessWidget {
                     : Text(
                         texto,
                         overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
                         style: const TextStyle(
                           fontSize: 16,
                           color: Colors.grey,
@@ -50,8 +53,8 @@ class Avatar extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
